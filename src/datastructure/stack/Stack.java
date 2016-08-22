@@ -11,12 +11,12 @@ public class Stack<T> {
         return size;
     }
 
-    public void push(T value){
-        if(head == null){
+    public void push(T value) {
+        if (head == null) {
             head = new Node<T>();
             head.setValue(value);
             size = 1;
-        }else{
+        } else {
             Node newHead = new Node<T>();
             newHead.setValue(value);
             newHead.setNext(head);
@@ -25,10 +25,10 @@ public class Stack<T> {
         }
     }
 
-    public T pop(){
-        if(head == null){
+    public T pop() {
+        if (head == null) {
             return null;
-        }else{
+        } else {
             T value = head.getValue();
             head = head.getNext();
             size--;
@@ -36,15 +36,15 @@ public class Stack<T> {
         }
     }
 
-    public T peek(){
-        if(head == null){
+    public T peek() {
+        if (head == null) {
             return null;
-        }else{
+        } else {
             return head.getValue();
         }
     }
 
-    private class Node<T>{
+    private class Node<T> {
         private T value;
         private Node<T> next;
 

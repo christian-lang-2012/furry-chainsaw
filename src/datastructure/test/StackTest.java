@@ -1,8 +1,8 @@
 package datastructure.test;
 
-import datastructure.stack.Stack;
-import org.junit.Assert;
 import org.junit.Test;
+
+import datastructure.stack.Stack;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -12,13 +12,13 @@ import static org.junit.Assert.assertNotNull;
  */
 public class StackTest {
     @Test
-    public void stackShouldInitialize(){
+    public void stackShouldInitialize() {
         Stack<String> testStack = new Stack<String>();
         assertNotNull("New stack should not be null", testStack);
     }
 
     @Test
-    public void stackShouldHaveSizeOfTwo(){
+    public void stackShouldHaveSizeOfTwo() {
         Stack<String> testStack = new Stack<String>();
         testStack.push("string number 1");
         testStack.push("string number 2");
@@ -26,7 +26,7 @@ public class StackTest {
     }
 
     @Test
-    public void stackShouldHaveSizeOfZero(){
+    public void stackShouldHaveSizeOfZero() {
         Stack<String> testStack = new Stack<String>();
         testStack.push("string number 1");
         testStack.push("string number 2");
@@ -36,7 +36,7 @@ public class StackTest {
     }
 
     @Test
-    public void stackHeadShouldBeSecondInsertedItem(){
+    public void stackHeadShouldBeSecondInsertedItem() {
         Stack<String> testStack = new Stack<String>();
         testStack.push("string1");
         testStack.push("string2");
