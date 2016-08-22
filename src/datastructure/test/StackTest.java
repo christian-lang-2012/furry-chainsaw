@@ -37,6 +37,9 @@ public class StackTest {
 
     @Test
     public void stackHeadShouldBeSecondInsertedItem(){
-
+        Stack<String> testStack = new Stack<String>();
+        testStack.push("string1");
+        testStack.push("string2");
+        assertEquals("Stack should have string2 as peek", "string2", testStack.peek());
     }
 }

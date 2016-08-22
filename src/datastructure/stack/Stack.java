@@ -16,8 +16,7 @@ public class Stack<T> {
             head = new Node<T>();
             head.setValue(value);
             size = 1;
-        }
-        else{
+        }else{
             Node newHead = new Node<T>();
             newHead.setValue(value);
             newHead.setNext(head);
@@ -34,6 +33,14 @@ public class Stack<T> {
             head = head.getNext();
             size--;
             return value;
+        }
+    }
+
+    public T peek(){
+        if(head == null){
+            return null;
+        }else{
+            return head.getValue();
         }
     }
 
