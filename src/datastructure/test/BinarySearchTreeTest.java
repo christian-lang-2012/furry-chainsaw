@@ -33,6 +33,7 @@ public class BinarySearchTreeTest {
     }
 
     @Test
+    public void BinarySearchTreeInOrderShouldBeCorrect() {
         BinarySearchTree<Character> bst = new BinarySearchTree<>();
         bst.insert(new Character('F'));
         bst.insert(new Character('B'));
@@ -47,6 +48,7 @@ public class BinarySearchTreeTest {
     }
 
     @Test
+    public void BinarySearchTreePostOrderShouldBeCorrect() {
         BinarySearchTree<Character> bst = new BinarySearchTree<>();
         bst.insert(new Character('F'));
         bst.insert(new Character('B'));
