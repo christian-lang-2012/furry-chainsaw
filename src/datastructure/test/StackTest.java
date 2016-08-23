@@ -2,7 +2,7 @@ package datastructure.test;
 
 import org.junit.Test;
 
-import datastructure.stack.Stack;
+import datastructure.stacks.Stack;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
