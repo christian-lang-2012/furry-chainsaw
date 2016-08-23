@@ -27,10 +27,10 @@ public class SinglyLinkedList<T> {
         Node<T> newNode = new Node<>(value);
 
         if (size == 0) {
-            if(head == null) {
+            if (head == null) {
                 head = newNode;
                 head.setNext(head);
-            }else {
+            } else {
                 newNode.setNext(head);
                 head = newNode;
             }
@@ -82,17 +82,17 @@ public class SinglyLinkedList<T> {
         return get(size - 1);
     }
 
-    public T remove(){
+    public T remove() {
         return remove(0);
     }
 
-    public T remove(int index){
+    public T remove(int index) {
         if (index > size) {
             throw new IllegalArgumentException("The index [" + index + "] is greater than the current size");
         }
 
         Node<T> current = head;
-        if(index == 0){
+        if (index == 0) {
             head = current.getNext();
             size--;
             return current.getValue();

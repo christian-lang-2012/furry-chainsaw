@@ -1,7 +1,5 @@
 package datastructure.trees;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 /**
  * Created by chris on 8/22/2016.
  * Binary search requires an order relation by which every element (item)
@@ -12,57 +10,54 @@ public class BinarySearchTree<T extends Comparable> {
 
     private Node<T> leaf;
 
-    public void insert(T value){
-        if(leaf == null){
+    public void insert(T value) {
+        if (leaf == null) {
             leaf = new Node(value);
-        }else{
-            insert(leaf, value);
+        } else {
+            leaf = insert(leaf, value);
         }
     }
 
-    private void insert(Node<T> node, T value){
-        if(node == null){
+    private Node<T> insert(Node<T> node, T value) {
+        if (node == null) {
             node = new Node<>(value);
-        }
-        else{
-            int comparisonResult = leaf.value.compareTo(value);
+            return node;
+        } else {
+            int comparisonResult = node.getValue().compareTo(value);
 
-            Node<T> nextNode = null;
-            if(comparisonResult == 0){
+            if (comparisonResult == 0) {
                 throw new IllegalArgumentException("A binary search tree cannot have duplicate values. Duplicate value: " + value.toString());
-            } else if(comparisonResult < 0){
-                nextNode = node.getLeft();
-            } else if(comparisonResult > 0) {
-                nextNode = node.getRight();
+            } else if (comparisonResult > 0) {
+                node.setLeft(insert(node.getLeft(), value));
+            } else if (comparisonResult < 0) {
+                node.setRight(insert(node.getRight(), value));
             }
-            insert(nextNode, value);
+            return node;
         }
     }
 
-    public String preOrder(){
+    public String preOrder() {
         return preOrder(leaf);
     }
 
-    private String preOrder(Node node){
+    private String preOrder(Node node) {
         String s = "";
-        if(node == null)
-        {
+        if (node == null) {
             return "";
         }
         s += node.getValue() + ",";
-        s += preOrder(node.getRight());
         s += preOrder(node.getLeft());
+        s += preOrder(node.getRight());
         return s;
     }
 
-    public String inOrder(){
+    public String inOrder() {
         return inOrder(leaf);
     }
 
-    private String inOrder(Node node){
+    private String inOrder(Node node) {
         String s = "";
-        if(node == null)
-        {
+        if (node == null) {
             return "";
         }
         s += inOrder(node.getLeft());
@@ -71,18 +66,17 @@ public class BinarySearchTree<T extends Comparable> {
         return s;
     }
 
-    public String postOrder(){
+    public String postOrder() {
         return postOrder(leaf);
     }
 
-    private String postOrder(Node node){
+    private String postOrder(Node node) {
         String s = "";
-        if(node == null)
-        {
+        if (node == null) {
             return "";
         }
-        s += postOrder(node.getRight());
         s += postOrder(node.getLeft());
+        s += postOrder(node.getRight());
         s += node.getValue() + ",";
 
         return s;
@@ -97,7 +91,7 @@ public class BinarySearchTree<T extends Comparable> {
             this.value = value;
         }
 
-        public T getValue(){
+        public T getValue() {
             return value;
         }
 

@@ -13,20 +13,20 @@ import static org.junit.Assert.assertNotNull;
 public class SinglyLinkedListTest {
 
     @Test
-    public void SinglyLinkedListShouldNotBeNull(){
+    public void SinglyLinkedListShouldNotBeNull() {
         SinglyLinkedList<String> linkedList = new SinglyLinkedList<>();
         assertNotNull("Linked list should not be null", linkedList);
     }
 
     @Test
-    public void SinglyLinkedListShouldHaveOneItem(){
+    public void SinglyLinkedListShouldHaveOneItem() {
         SinglyLinkedList<String> linkedList = new SinglyLinkedList<>();
         linkedList.insert("string1");
         assertEquals("Size should equal one", 1, linkedList.getSize());
     }
 
     @Test
-    public void SinglyLinkedListShouldGetItemAtIndex(){
+    public void SinglyLinkedListShouldGetItemAtIndex() {
         SinglyLinkedList<String> linkedList = new SinglyLinkedList<>();
         linkedList.insert("string1");
         linkedList.insert("string2");
@@ -35,7 +35,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    public void SinglyLinkedListShouldAddItemAtIndex(){
+    public void SinglyLinkedListShouldAddItemAtIndex() {
         SinglyLinkedList<String> linkedList = new SinglyLinkedList<>();
         linkedList.insert("string1");
         linkedList.insert("string2");
@@ -45,7 +45,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    public void SinglyLinkedListShouldRemoveHead(){
+    public void SinglyLinkedListShouldRemoveHead() {
         SinglyLinkedList<String> linkedList = new SinglyLinkedList<>();
         linkedList.insert("string1");
         linkedList.insert("string2");
@@ -56,7 +56,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    public void SinglyLinkedListShouldRemoveItemAtIndex(){
+    public void SinglyLinkedListShouldRemoveItemAtIndex() {
         SinglyLinkedList<String> linkedList = new SinglyLinkedList<>();
         linkedList.insert("string1");
         linkedList.insert("string2");
